@@ -6,11 +6,12 @@ Various utility functions for the neb.
 import numpy
 from math import sqrt, sin, cos, log, pi, ceil
 
+
 def sPBC(vdir):
     return (vdir % 1.0 + 1.5) % 1.0 - 0.5
-            
 
-def DBC(r, box = None, ibox = 0):
+
+def DBC(r, box=None, ibox=0):
     """
     Applies periodic boundary conditions.
     Parameters:
@@ -58,8 +59,8 @@ def vmag(v):
     """
     Returns the magnitude of v
     """
-    return numpy.sqrt(numpy.vdot(v,v))
-    #return sqrt((v * v).sum())
+    return numpy.sqrt(numpy.vdot(v, v))
+    # return sqrt((v * v).sum())
 
 
 def vmag2(v):
@@ -75,6 +76,7 @@ def vdot(v1, v2):
     """
     return (v1 * v2).sum()
 
+
 def v2rotate(V1, V2, tTh):
     """
     Rotate V1 and V2 in their plane by the angle tTh
@@ -84,5 +86,3 @@ def v2rotate(V1, V2, tTh):
     V1tmp = V1
     V1 = V1 * cTh + V2 * sTh
     V2 = V2 * cTh - V1tmp * sTh
-
-
